@@ -23,7 +23,7 @@ class BiomedicalHybridSearcher:
         sparse_scores = (self.sparse_matrix * query_sparse.T).toarray().flatten()
 
         # 2. Compute Dense Scores (Semantic Match) via Cosine Similarity
-        q_vec = np.array(query_vector)
+        q_vec = np.array(query_vector).flatten()
         norm_corpus = np.linalg.norm(self.embeddings, axis=1)
         norm_query = np.linalg.norm(q_vec)
         

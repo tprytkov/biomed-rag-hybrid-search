@@ -51,7 +51,7 @@ def read_root():
 def query_pipeline(payload: QueryRequest):
     try:
         # 1. Transform query text to raw spatial embeddings vectors
-        query_vec = embedder.get_embeddings([payload.query])
+        query_vec = embedder.get_embeddings([payload.query])[0]
         
         # 2. Extract best matching snippets through sparse and dense criteria
         contexts = searcher.search(payload.query, query_vector=query_vec, top_k=payload.top_k)
