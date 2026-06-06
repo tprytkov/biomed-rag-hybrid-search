@@ -1,1 +1,33 @@
  
+version: '3.8'
+
+services:
+  # Core Biomedical Hybrid RAG Application Endpoint Engine
+  api:
+    build: .
+    container_name: biomed-rag-api-core
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=production
+      - LOG_LEVEL=INFO
+      - QDRANT_HOST=vector-db
+      - QDRANT_PORT=6333
+    volumes:
+      - hf_cache:/app/cache/huggingface
+    depends_on:
+      - vector-db
+
+  # Scalable Vector Database Engine Instance
+  vector-db:
+    image: qdrant/qdrant:latest
+    container_name: biomed-rag-qdrant-db
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+
+volumes:
+  hf_cache:
+  qdrant_storage:
