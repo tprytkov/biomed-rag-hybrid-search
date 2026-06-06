@@ -1,4 +1,4 @@
- from typing import List, Dict, Any
+from typing import List, Dict, Any
 from src.app.utils.logging import logger
 
 class MedicalTextChunker:
