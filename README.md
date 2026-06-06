@@ -2,8 +2,11 @@
 
 
 
-An asynchronous, production-grade Retrieval-Augmented Generation (RAG) platform specialized for dense clinical and scientific literature. This architecture combines sparse token match matrices (TF-IDF/BM25) with dense transformer spatial vectors (`bge-small-en-v1.5`) via linear score fusion to eliminate generative hallucinations and optimize search relevance.
+An asynchronous, production-grade Retrieval-Augmented Generation (RAG) platform specialized for dense clinical and scientific literature. This architecture combines sparse token match matrices (TF-IDF/BM25) with dense transformer embeddings (`bge-small-en-v1.5`) via linear score fusion to eliminate generative hallucinations and optimize search relevance.
 
+## Project Summary
+
+This project demonstrates a biomedical Retrieval-Augmented Generation pipeline using hybrid search. It combines sparse keyword-based retrieval with dense transformer embeddings, fuses retrieval scores, and serves results through a FastAPI backend and Streamlit interface. The repository also includes notebooks, automated tests, Docker configuration, and documentation for API usage, architecture, and model behavior.
 
 
 \## 🧬 Core Architecture Topology
@@ -40,7 +43,7 @@ An asynchronous, production-grade Retrieval-Augmented Generation (RAG) platform 
 
 ```bash
 
-git clone https://github.com
+git clone https://github.com/tprytkov/biomed-rag-hybrid-search.git
 
 cd biomed-rag-hybrid-search
 
