@@ -82,7 +82,7 @@ This specification sheet documents the technical properties, performance trade-o
 
 \### Context-Grounding Strategy
 
-To eliminate hallucination risks typical of generative systems, this model is configured under a strict RAG grounding system:
+To reduce hallucination risk, answers are grounded in evidence retrieved by the RAG system:
 
 \* \*\*Temperature Setting\*\*: 0.0 (Deterministic output constraint).
 
